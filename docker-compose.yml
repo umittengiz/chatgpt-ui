@@ -4,7 +4,8 @@ services:
     platform: linux/x86_64
     image: wongsaang/chatgpt-ui-client:latest
     environment:
-      - SERVER_DOMAIN=http://backend-web-server
+      # - SERVER_DOMAIN=http://backend-web-server
+      - SERVER_DOMAIN=https://chatgpt.umit.dev
     depends_on:
       - backend-web-server
     ports:
