@@ -9,7 +9,7 @@ services:
     depends_on:
       - backend-web-server
     ports:
-      - '${CLIENT_PORT:-80}:80'
+      - '${CLIENT_PORT:-81}:81'
     networks:
       - chatgpt_ui_network
     restart: always
