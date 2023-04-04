@@ -4,12 +4,12 @@ services:
     platform: linux/x86_64
     image: wongsaang/chatgpt-ui-client:latest
     environment:
-      - SERVER_DOMAIN=http://backend-web-server
+      - SERVER_DOMAIN=http://chatgpt.umit.dev
       # - SERVER_DOMAIN=http://backend-web-server
     depends_on:
       - backend-web-server
     ports:
-      - '${CLIENT_PORT:-81}:81'
+      - '${CLIENT_PORT:-80}:80'
     networks:
       - chatgpt_ui_network
     restart: always
@@ -40,7 +40,7 @@ services:
     platform: linux/x86_64
     image: wongsaang/chatgpt-ui-web-server:latest
     environment:
-      - BACKEND_URL=http://backend-wsgi-server:8000
+      - BACKEND_URL=http://chatgpt.umit.dev:8000
     ports:
       - '${SERVER_PORT:-9000}:80'
     depends_on:
